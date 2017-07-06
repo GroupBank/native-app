@@ -71,7 +71,7 @@ class DebtCircle extends React.Component {
     return (
       <View>
         <Text>{title}</Text>
-        <Image source={circle_color} style={{width: 250, height: 250}}/>
+        <Image source={circle_color} style={{width: 300, height: 300}}/>
       </View>
     );
   }
@@ -81,13 +81,21 @@ class DebtCircle extends React.Component {
 export default class LotsOfStyles extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <GroupSwitcherButton/>
-        <DebtCircle debt_status='owed'/>
-        <DebtBalance/>
-        <PaymentSuggestion/>
-        <PaymentButton/>
-        <NotificationButton/>
+      <View style={styles.main}>
+        <View style={styles.top}>
+          <GroupSwitcherButton/>
+        </View>
+        <View style={styles.middle_circle}>
+          <DebtCircle debt_status='owed'/>
+          <DebtBalance/>
+          <View style={styles.middle_suggestion}>
+            <PaymentSuggestion/>
+          </View>
+        </View>
+        <View style={styles.bottom}>
+          <PaymentButton/>
+          <NotificationButton />
+        </View>
       </View>
     );
   }
@@ -95,13 +103,37 @@ export default class LotsOfStyles extends React.Component {
 
 
 const styles = StyleSheet.create({
-  bigblue: {
-    color: 'blue',
-    fontWeight: 'bold',
-    fontSize: 30,
+  main: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
   },
-  red: {
-    color: 'red',
+  blank: {
+    flex: 1,
+  },
+  top: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  middle_circle: {
+    flex: 4,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  middle_suggestion: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+  },
+  bottom: {
+    flex: 2,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
   },
 });
 
