@@ -85,11 +85,13 @@ export default class LotsOfStyles extends React.Component {
         <View style={styles.top}>
           <GroupSwitcherButton/>
         </View>
-        <View style={styles.middle_circle}>
-          <DebtCircle debt_status='owed'/>
-          <DebtBalance/>
-          <View style={styles.middle_suggestion}>
-            <PaymentSuggestion/>
+        <View style={styles.middle}>
+          <View style={styles.circle}>
+            <Text style={styles.text_circle_mode}> Owing: </Text>
+            <Text style={styles.text_circle_debt}> 3.52 $ </Text>
+          </View>
+          <View style={styles.suggestion}>
+            <Text style={styles.suggestion_text}> Pay Tiago a drink! </Text>
           </View>
         </View>
         <View style={styles.bottom}>
@@ -108,26 +110,44 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
   },
-  blank: {
-    flex: 1,
-  },
   top: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
   },
-  middle_circle: {
+  middle: {
     flex: 4,
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
   },
-  middle_suggestion: {
+  circle: {
+    width: 300,
+    height: 300,
+    borderRadius: 300/2,
+    backgroundColor: '#E53935',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  text_circle_mode: {
+    color: 'white',
+    fontSize: 25,
+  },
+  text_circle_debt: {
+    color: 'white',
+    fontSize: 60,
+  },
+  suggestion: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
+  },
+  suggestion_text: {
+    fontSize: 25,
+    fontStyle: 'italic'
   },
   bottom: {
     flex: 2,
