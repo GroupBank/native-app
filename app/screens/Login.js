@@ -1,5 +1,6 @@
 import React from 'react';
-import { FormLabel, FormInput, SocialIcon, Button } from 'react-native-elements';
+import { FormLabel, FormInput, SocialIcon, Button, Divider } from 'react-native-elements';
+import { View } from 'react-native';
 
 import { Container } from '../components/Container';
 
@@ -41,15 +42,33 @@ class Login extends React.Component {
         <FormInput onChangeText={this.emailChangeText} />
 
         <FormLabel>Password</FormLabel>
-        <FormInput secureTextEntry onChangeText={this.passwordChangeText} />
-
-        <Button
-          raised
-          title="Sign in"
-          onPress={this.submitCredentials}
-          onLongPress={this.submitCredentials}
-          backgroundColor={'#1de9b6'}
+        <FormInput
+          secureTextEntry
+          onSubmitEditing={this.submitCredentials}
+          onChangeText={this.passwordChangeText}
         />
+
+        <Divider style={{ height: 20, backgroundColor: '#fff' }} />
+
+        <View style={{ alignItems: 'center', flexDirection: 'row', justifyContent: 'center' }} >
+          <Button
+            raised
+            title="Sign in"
+            onPress={this.submitCredentials}
+            onLongPress={this.submitCredentials}
+            backgroundColor={'#1de9b6'}
+          />
+          <Button
+            flex="1"
+            raised
+            title="Register"
+            onPress={this.submitCredentials}
+            onLongPress={this.submitCredentials}
+            backgroundColor={'#1de9b6'}
+          />
+        </View>
+
+        <Divider style={{ height: 20, backgroundColor: '#fff' }} />
 
         <SocialIcon
           title="Sign In With Twitter"
