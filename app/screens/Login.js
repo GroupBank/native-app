@@ -37,7 +37,7 @@ class Login extends React.Component {
 
   render() {
     return (
-      <Container backgroundColor={'#fff'}>
+      <Container >
         <FormLabel>Email</FormLabel>
         <FormInput onChangeText={this.emailChangeText} />
 
