@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { StatusBar, Text } from 'react-native';
 import { Button } from 'react-native-elements';
 
+import { SuggestionText } from '../components/PaymentSuggestion';
 import { Container } from '../components/Container';
 import { CircleDebt } from '../components/CircleView';
 
@@ -46,7 +47,7 @@ class Home extends Component {
 
         <CircleDebt isOwing={false} amount={4.24} />
 
-        <Text> Pay a drink to Tiago Ricardo! </Text>
+        <SuggestionText />
 
         <Button
           raised
